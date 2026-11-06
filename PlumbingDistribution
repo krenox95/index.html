@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Distribution Company (PDC) | Trade Customer Portal & B2B Merchant Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pdcBlue: '#0068B3',
+                        pdcLightBlue: '#54B9EE',
+                        pdcDark: '#1A1A1A',
+                        pdcGray: '#F4F7F9',
+                        pdcBorder: '#E2E8F0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-btn {
+            box-shadow: 0 0 25px rgba(84, 185, 238, 0.45);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 35px rgba(84, 185, 238, 0.75);
+            transform: translateY(-2px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-pdcGray text-pdcDark font-sans antialiased selection:bg-pdcLightBlue selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-pdcDark text-white py-2.5 px-4 text-xs md:text-sm font-medium border-b border-gray-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2 text-center sm:text-left">
+                <span class="bg-pdcLightBlue text-pdcDark text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider">TRADE ONLY WHOLESALE</span>
+                <span class="text-gray-200"><strong>ATTENTION UK MERCHANTS & CONTRACTORS:</strong> Check live stock and place orders 24/7 at <strong>mypdc.co.uk</strong></span>
+            </div>
+            <div class="hidden lg:flex items-center space-x-6 text-xs">
+                <span><i class="fa-solid fa-phone text-pdcLightBlue mr-1.5"></i> Trade Desk: <strong>0800 123 4567</strong></span>
+                <a href="https://mypdc.co.uk" target="_blank" rel="noopener noreferrer" class="text-pdcLightBlue hover:underline flex items-center gap-1 font-bold">
+                    <i class="fa-solid fa-lock"></i> Merchant Portal Sign In
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white border-b border-pdcBorder shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-3 group">
+                        <div class="w-12 h-12 bg-pdcBlue rounded-xl flex items-center justify-center font-black text-2xl text-white tracking-tighter shadow-md group-hover:bg-pdcDark transition-colors">
+                            P<span class="text-pdcLightBlue">D</span>C
+                        </div>
+                        <div>
+                            <span class="block text-xl font-black tracking-tight text-pdcDark leading-none">PLUMBING</span>
+                            <span class="block text-[11px] font-extrabold text-pdcBlue tracking-widest uppercase">DISTRIBUTION COMPANY</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-bold text-gray-700">
+                    <a href="#categories" class="hover:text-pdcBlue transition-colors">Trade Product Range</a>
+                    <a href="#calculator" class="hover:text-pdcBlue transition-colors flex items-center gap-1.5">
+                        <span class="bg-blue-100 text-pdcBlue text-[10px] px-2 py-0.5 rounded font-black">TOOL</span> Trade Materials Estimator
+                    </a>
+                    <a href="#benefits" class="hover:text-pdcBlue transition-colors">Portal Features</a>
+                    <a href="#faq" class="hover:text-pdcBlue transition-colors">Merchant FAQ</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://mypdc.co.uk" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center bg-pdcBlue hover:bg-blue-700 text-white font-black px-5 py-3 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg gap-2">
+                        <i class="fa-solid fa-right-to-bracket"></i> Sign In to MyPDC Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-slate-900 via-pdcDark to-slate-900 text-white overflow-hidden py-16 lg:py-24">
+        <!-- Radial Glow Overlay -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#54B9EE_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Copy & Primary CTAs -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pdcBlue/20 border border-pdcLightBlue/40 text-pdcLightBlue text-xs font-bold">
+                        <span class="flex h-2 w-2 rounded-full bg-pdcLightBlue animate-pulse"></span>
+                        UK Trade Wholesale & Merchant Portal
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Your Direct UK Trade Wholesale Hub for <span class="text-transparent bg-clip-text bg-gradient-to-r from-pdcLightBlue via-blue-300 to-white">Plumbing & Drainage</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        All PDC soil & waste systems, underground drainage, blue MDPE water pipe, and rainwater products are now managed exclusively through our dedicated trade portal at <strong class="text-white">mypdc.co.uk</strong>. Access live trade pricing and nationwide delivery 24/7.
+                    </p>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="https://mypdc.co.uk" target="_blank" rel="noopener noreferrer" 
+                           class="glow-btn bg-pdcLightBlue hover:bg-sky-400 text-pdcDark font-black px-8 py-4 rounded-xl text-base flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-lock-open text-lg"></i>
+                            Sign In to MyPDC Portal (mypdc.co.uk)
+                        </a>
+
+                        <a href="https://mypdc.co.uk/register" target="_blank" rel="noopener noreferrer" 
+                           class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-4 rounded-xl text-base flex items-center justify-center transition-all">
+                            Apply for Trade Account
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="pt-8 border-t border-gray-800 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-xl sm:text-2xl font-black text-pdcLightBlue">5:00 PM</div>
+                            <div class="text-xs text-gray-400 font-medium">Cut-off for Next-Day Delivery</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-black text-pdcLightBlue">10,000+</div>
+                            <div class="text-xs text-gray-400 font-medium">SKUs in UK Stock</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-black text-pdcLightBlue">BS EN Compliant</div>
+                            <div class="text-xs text-gray-400 font-medium">Certified Building Supplies</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Dashboard Mockup Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 text-pdcDark shadow-2xl relative overflow-hidden border border-white/20">
+                        <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="text-xs font-mono text-gray-500 ml-2">mypdc.co.uk/merchant-dashboard</span>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-[10px] font-black px-2.5 py-0.5 rounded-full">LIVE PORTAL</span>
+                        </div>
+
+                        <!-- Mockup Account Stats -->
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex justify-between items-center">
+                                <div>
+                                    <div class="text-xs text-gray-500 font-medium">Trade Account Level</div>
+                                    <div class="text-sm font-bold text-pdcDark">Approved Merchant Band A</div>
+                                </div>
+                                <span class="text-xs font-bold text-pdcBlue bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Trade Net Prices</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                                    <div class="text-xs text-gray-500">110mm Pushfit Soil System</div>
+                                    <div class="text-xs font-bold text-green-600 mt-1 flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-check"></i> In Stock (450m)
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                                    <div class="text-xs text-gray-500">25mm Blue MDPE Water Pipe</div>
+                                    <div class="text-xs font-bold text-green-600 mt-1 flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-check"></i> In Stock (120 Coils)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50/80 border border-blue-100 p-4 rounded-xl">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-black text-pdcBlue uppercase tracking-wider">Quick Call-Off Order</span>
+                                    <span class="text-[11px] font-mono text-gray-500">Ref #PDC-99214</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mb-3">110mm Pushfit Soil Pack + Underground Drainage Channels & Soakaway Crates</p>
+                                <a href="https://mypdc.co.uk" target="_blank" class="block text-center w-full bg-pdcBlue hover:bg-blue-700 text-white text-xs font-bold py-2.5 rounded-lg transition-colors shadow-sm">
+                                    Re-Order in MyPDC Portal
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Footer notice on card -->
+                        <div class="mt-4 text-center border-t border-gray-100 pt-3">
+                            <p class="text-[11px] text-gray-400 font-medium"><i class="fa-solid fa-shield-halved text-pdcLightBlue mr-1"></i> 256-Bit SSL Encrypted UK Merchant Connection.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATEGORIES SHOWCASE (KALSI STYLE GRID) -->
+    <section id="categories" class="py-16 lg:py-24 bg-white border-b border-pdcBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-pdcBlue font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">UK Trade Catalogues</span>
+                <h2 class="text-3xl font-black text-pdcDark mt-3 sm:text-4xl">Core Product Range</h2>
+                <p class="mt-4 text-gray-600 text-base">Browse our comprehensive range of British Standard compliant plastic plumbing, soil & waste, and site drainage systems available for trade order.</p>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-pdcGray rounded-2xl p-6 border border-pdcBorder hover:border-pdcLightBlue transition-all group hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-pdcBlue/10 text-pdcBlue rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-pdcBlue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrows-split-up-and-left"></i>
+                        </div>
+                        <span class="text-xs font-bold text-pdcLightBlue uppercase tracking-wider">Category 01</span>
+                        <h3 class="text-xl font-black text-pdcDark mt-1">Soil & Waste Systems (110mm / 160mm)</h3>
+                        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Pushfit & solvent weld soil pipe (Black, Grey, White), waste pipes, soil stacks, branches, and air admittance valves.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
+                        <span class="text-xs text-green-600 font-bold flex items-center"><i class="fa-solid fa-check mr-1"></i> BS EN 1329 Compliant</span>
+                        <a href="https://mypdc.co.uk" target="_blank" class="text-xs font-black text-pdcBlue group-hover:text-pdcLightBlue flex items-center gap-1">
+                            Check Trade Prices <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-pdcGray rounded-2xl p-6 border border-pdcBorder hover:border-pdcLightBlue transition-all group hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-pdcBlue/10 text-pdcBlue rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-pdcBlue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <span class="text-xs font-bold text-pdcLightBlue uppercase tracking-wider">Category 02</span>
+                        <h3 class="text-xl font-black text-pdcDark mt-1">MDPE Water Pipe & Barrier Pipe</h3>
+                        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Blue MDPE service pipe (20mm, 25mm, 32mm, 63mm), gas coils, plus WRAS-approved compression fittings.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
+                        <span class="text-xs text-green-600 font-bold flex items-center"><i class="fa-solid fa-check mr-1"></i> 25m - 150m Coils</span>
+                        <a href="https://mypdc.co.uk" target="_blank" class="text-xs font-black text-pdcBlue group-hover:text-pdcLightBlue flex items-center gap-1">
+                            Check Trade Prices <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-pdcGray rounded-2xl p-6 border border-pdcBorder hover:border-pdcLightBlue transition-all group hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-pdcBlue/10 text-pdcBlue rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-pdcBlue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <span class="text-xs font-bold text-pdcLightBlue uppercase tracking-wider">Category 03</span>
+                        <h3 class="text-xl font-black text-pdcDark mt-1">Underground Drainage & Soakaways</h3>
+                        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Terracotta 110mm/160mm underground pipe, inspection chambers, gullies, channel drain, and soakaway crates.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
+                        <span class="text-xs text-green-600 font-bold flex items-center"><i class="fa-solid fa-check mr-1"></i> BS EN 1401 Certified</span>
+                        <a href="https://mypdc.co.uk" target="_blank" class="text-xs font-black text-pdcBlue group-hover:text-pdcLightBlue flex items-center gap-1">
+                            Check Trade Prices <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-pdcGray rounded-2xl p-6 border border-pdcBorder hover:border-pdcLightBlue transition-all group hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-pdcBlue/10 text-pdcBlue rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-pdcBlue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-cloud-showers-heavy"></i>
+                        </div>
+                        <span class="text-xs font-bold text-pdcLightBlue uppercase tracking-wider">Category 04</span>
+                        <h3 class="text-xl font-black text-pdcDark mt-1">Rainwater Systems & Guttering</h3>
+                        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Half-round, square, deepflow, and ogee gutter profiles in Black, Grey, White, and Brown with downpipes.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
+                        <span class="text-xs text-green-600 font-bold flex items-center"><i class="fa-solid fa-check mr-1"></i> Domestic & Commercial</span>
+                        <a href="https://mypdc.co.uk" target="_blank" class="text-xs font-black text-pdcBlue group-hover:text-pdcLightBlue flex items-center gap-1">
+                            Check Trade Prices <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-pdcGray rounded-2xl p-6 border border-pdcBorder hover:border-pdcLightBlue transition-all group hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-pdcBlue/10 text-pdcBlue rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-pdcBlue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-faucet-drip"></i>
+                        </div>
+                        <span class="text-xs font-bold text-pdcLightBlue uppercase tracking-wider">Category 05</span>
+                        <h3 class="text-xl font-black text-pdcDark mt-1">Solvent Cement, Clips & Sundries</h3>
+                        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Silicone lubricants, PVC solvent cements, pipe brackets, fire collars, and testing plugs for building control.</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
+                        <span class="text-xs text-green-600 font-bold flex items-center"><i class="fa-solid fa-check mr-1"></i> Full Trade Sundries</span>
+                        <a href="https://mypdc.co.uk" target="_blank" class="text-xs font-black text-pdcBlue group-hover:text-pdcLightBlue flex items-center gap-1">
+                            Check Trade Prices <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Portal Quick Access CTA Card -->
+                <div class="bg-gradient-to-br from-pdcBlue to-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between shadow-xl">
+                    <div>
+                        <span class="bg-pdcLightBlue text-pdcDark text-[10px] font-black uppercase px-2.5 py-1 rounded">APPROVED TRADE ACCOUNTS ONLY</span>
+                        <h3 class="text-2xl font-black mt-4">Require a Full Schedule Quote or Site Call-off?</h3>
+                        <p class="text-gray-200 text-sm mt-2 leading-relaxed">Log into the MyPDC portal to upload your Bill of Quantities (BOQ) or site specification for automated trade schedule pricing.</p>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://mypdc.co.uk" target="_blank" class="w-full bg-pdcLightBlue hover:bg-sky-400 text-pdcDark font-black py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-solid fa-file-arrow-up"></i> Upload BOQ to MyPDC Portal
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TRADE MATERIAL CALCULATOR TOOL -->
+    <section id="calculator" class="py-16 lg:py-24 bg-pdcGray relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-pdcBorder shadow-xl">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="bg-blue-100 text-pdcBlue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Interactive B2B Estimator</span>
+                        <h2 class="text-3xl font-black text-pdcDark">Trade Materials & Fitting Estimator</h2>
+                        <p class="text-gray-600 text-sm leading-relaxed">Select your pipe system and input the total run length in metres to calculate estimated pipe lengths, couplings, clips, and solvent requirement.</p>
+                        
+                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
+                            <i class="fa-solid fa-circle-info text-pdcBlue text-lg mt-0.5"></i>
+                            <p class="text-xs text-blue-950 leading-relaxed">
+                                <strong>Trade Tip:</strong> Transferring this specification sends the itemised schedule straight to your <strong>mypdc.co.uk</strong> basket with your pre-negotiated trade discounts applied.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-pdcGray p-6 rounded-2xl border border-pdcBorder space-y-6">
+                        
+                        <!-- Inputs -->
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Pipe System Type</label>
+                                <select id="calcSystem" class="w-full bg-white border border-gray-300 rounded-xl p-3 text-sm font-semibold text-pdcDark focus:ring-2 focus:ring-pdcBlue focus:outline-none">
+                                    <option value="pushfit110">110mm Pushfit Soil Pipe (3m lengths)</option>
+                                    <option value="solvent110">110mm Solvent Weld Soil Pipe (3m lengths)</option>
+                                    <option value="waste32">32mm Solvent Weld Waste Pipe (3m lengths)</option>
+                                    <option value="underground110">110mm Underground Drainage (3m lengths)</option>
+                                    <option value="mdpe25">25mm Blue MDPE Water Pipe (25m/50m Coils)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Total Run Length (Metres)</label>
+                                <input type="number" id="calcMeters" value="24" min="1" max="500" class="w-full bg-white border border-gray-300 rounded-xl p-3 text-sm font-semibold text-pdcDark focus:ring-2 focus:ring-pdcBlue focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Results Box -->
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-3">
+                            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider border-b pb-2">Estimated Trade Specification (Excl. VAT)</div>
+                            
+                            <div class="flex justify-between items-center text-sm font-semibold text-pdcDark">
+                                <span>Main Pipe Runs:</span>
+                                <span id="resPipes" class="text-pdcBlue font-bold">8 lengths x 3m (110mm Pushfit Soil Pipe)</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm font-semibold text-pdcDark">
+                                <span>Couplings & Pipe Clips:</span>
+                                <span id="resCouplers" class="text-pdcBlue font-bold">9 Double Socket Couplers / 12 Pipe Clips</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm font-semibold text-pdcDark">
+                                <span>Solvent Cement / Lubricant:</span>
+                                <span id="resLube" class="text-pdcBlue font-bold">1x 500ml Silicone Gel Spray</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <a href="https://mypdc.co.uk" target="_blank" class="w-full bg-pdcBlue hover:bg-blue-700 text-white font-black py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 text-sm shadow-md transition-all">
+                            <i class="fa-solid fa-cart-plus"></i> Transfer Specification to MyPDC Basket
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY USE MYPDC CUSTOMER PORTAL (VALUE PILLARS) -->
+    <section id="benefits" class="py-16 lg:py-24 bg-white border-y border-pdcBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-pdcBlue font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Merchant Portal Features</span>
+                <h2 class="text-3xl font-black text-pdcDark mt-3 sm:text-4xl">Why Order via mypdc.co.uk?</h2>
+                <p class="mt-4 text-gray-600">Built specifically to streamline supply chains for UK plumbers, civil engineering contractors, and independent builder merchants.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="p-6 rounded-2xl bg-pdcGray border border-pdcBorder text-center hover:border-pdcBlue transition-colors">
+                    <div class="w-12 h-12 bg-pdcBlue text-white rounded-xl flex items-center justify-center text-xl mx-auto mb-4 shadow-sm">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-pdcDark">Bespoke Trade Discounts</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">Instant access to agreed net pricing bands and volume tiering without waiting for manual quotes.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-pdcGray border border-pdcBorder text-center hover:border-pdcBlue transition-colors">
+                    <div class="w-12 h-12 bg-pdcBlue text-white rounded-xl flex items-center justify-center text-xl mx-auto mb-4 shadow-sm">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-pdcDark">Next-Day UK Delivery</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">Order before 5:00 PM for guaranteed next-day dispatch direct to merchant yard or site address.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-pdcGray border border-pdcBorder text-center hover:border-pdcBlue transition-colors">
+                    <div class="w-12 h-12 bg-pdcBlue text-white rounded-xl flex items-center justify-center text-xl mx-auto mb-4 shadow-sm">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-pdcDark">Instant PDF Invoicing</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">Download monthly statements, VAT invoices, and Proof of Delivery (POD) notes 24 hours a day.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-pdcGray border border-pdcBorder text-center hover:border-pdcBlue transition-colors">
+                    <div class="w-12 h-12 bg-pdcBlue text-white rounded-xl flex items-center justify-center text-xl mx-auto mb-4 shadow-sm">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-pdcDark">Dedicated Account Manager</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">Direct messaging with your assigned PDC regional account contact for technical support and special call-offs.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-16 lg:py-24 bg-pdcGray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-pdcBlue font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1 rounded-full border border-blue-100">Trade Support</span>
+                <h2 class="text-3xl font-black text-pdcDark mt-3">Frequently Asked Questions (FAQ)</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl border border-pdcBorder overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-pdcDark flex justify-between items-center focus:outline-none faq-toggle">
+                        <span>How do I access my PDC trade account on mypdc.co.uk?</span>
+                        <i class="fa-solid fa-chevron-down text-pdcBlue transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-sm text-gray-600 border-t border-gray-100 faq-content leading-relaxed">
+                        Existing Plumbing Distribution Company account holders have had their credentials automatically migrated. Simply click "Sign In to MyPDC Portal", select "Forgot Password", and enter your registered company email address to receive your secure login link.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl border border-pdcBorder overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-pdcDark flex justify-between items-center focus:outline-none faq-toggle">
+                        <span>What is the cut-off time for next-day UK nationwide delivery?</span>
+                        <i class="fa-solid fa-chevron-down text-pdcBlue transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-sm text-gray-600 border-t border-gray-100 faq-content leading-relaxed">
+                        Orders placed through mypdc.co.uk prior to 5:00 PM Monday through Thursday will be dispatched for next-day delivery across mainland UK. Direct site deliveries can also be scheduled during checkout.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl border border-pdcBorder overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-pdcDark flex justify-between items-center focus:outline-none faq-toggle">
+                        <span>Are all PDC products certified to British Standards (BS EN)?</span>
+                        <i class="fa-solid fa-chevron-down text-pdcBlue transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-sm text-gray-600 border-t border-gray-100 faq-content leading-relaxed">
+                        Yes. All PDC plastic plumbing fittings, soil & waste systems (BS EN 1329), underground drainage (BS EN 1401), and rainwater profiles meet full UK Building Regulations and British Quality Standards.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl border border-pdcBorder overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-pdcDark flex justify-between items-center focus:outline-none faq-toggle">
+                        <span>How can new plumbing merchants apply for a 30-day trade credit account?</span>
+                        <i class="fa-solid fa-chevron-down text-pdcBlue transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-sm text-gray-600 border-t border-gray-100 faq-content leading-relaxed">
+                        New merchant applicants can click "Apply for Trade Account" to submit a 2-minute online credit application. Once verified by our finance team, your account will be activated with agreed credit terms and net pricing bands.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="py-16 bg-gradient-to-r from-pdcBlue via-sky-600 to-pdcDark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-black">Ready to Order Plumbing Supplies Online?</h2>
+            <p class="text-lg text-blue-100 max-w-2xl mx-auto">Manage your account, check live warehouse stock, and place trade orders in the MyPDC Merchant Portal.</p>
+            <div class="pt-4">
+                <a href="https://mypdc.co.uk" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-3 bg-white text-pdcDark hover:bg-pdcLightBlue hover:text-white font-black px-8 py-4 rounded-xl text-lg shadow-2xl transition-all">
+                    <i class="fa-solid fa-right-to-bracket text-pdcBlue"></i> Go to Merchant Portal (mypdc.co.uk)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-pdcDark text-gray-400 py-12 border-t border-gray-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 pb-8 border-b border-gray-800">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-pdcBlue rounded-lg flex items-center justify-center font-black text-white text-sm">PDC</div>
+                        <span class="font-black text-white text-base tracking-tight">Plumbing Distribution Co.</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Leading UK wholesale distributor of plastic soil & waste systems, underground drainage, MDPE water pipe, and rainwater products.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Direct Merchant Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="https://mypdc.co.uk" target="_blank" class="hover:text-pdcLightBlue transition-colors">MyPDC Portal Sign In</a></li>
+                        <li><a href="https://mypdc.co.uk/register" target="_blank" class="hover:text-pdcLightBlue transition-colors">Apply for Trade Account</a></li>
+                        <li><a href="https://mypdc.co.uk/terms" target="_blank" class="hover:text-pdcLightBlue transition-colors">Wholesale Conditions of Sale</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">UK Trade Desk Support</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><i class="fa-solid fa-phone mr-1.5 text-pdcLightBlue"></i> 0800 123 4567</li>
+                        <li><i class="fa-solid fa-envelope mr-1.5 text-pdcLightBlue"></i> trade@plumbingdistribution.co.uk</li>
+                        <li><i class="fa-solid fa-clock mr-1.5 text-pdcLightBlue"></i> Mon - Fri: 7:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Compliance & Security</h4>
+                    <p class="text-xs text-gray-400 mb-2 leading-relaxed">All portal transactions and trade credit orders are encrypted with 256-bit SSL protection.</p>
+                    <span class="inline-block bg-gray-800 text-gray-300 text-[10px] font-mono px-2 py-1 rounded border border-gray-700">BS EN 1329 / 1401 CERTIFIED</span>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
+                <div>&copy; 2026 Plumbing Distribution Company (PDC). Registered in England & Wales.</div>
+                <div class="mt-4 sm:mt-0 space-x-4">
+                    <a href="https://mypdc.co.uk" target="_blank" class="hover:text-white">Privacy Policy</a>
+                    <a href="https://mypdc.co.uk" target="_blank" class="hover:text-white">Merchant Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Interactive UK Materials & Fitting Estimator Logic
+        const calcSystem = document.getElementById('calcSystem');
+        const calcMeters = document.getElementById('calcMeters');
+        const resPipes = document.getElementById('resPipes');
+        const resCouplers = document.getElementById('resCouplers');
+        const resLube = document.getElementById('resLube');
+
+        function updateEstimate() {
+            const meters = parseFloat(calcMeters.value) || 0;
+            const system = calcSystem.value;
+
+            if (system === 'pushfit110') {
+                const pipes = Math.ceil(meters / 3);
+                const couplers = Math.ceil(meters / 2.5);
+                const clips = Math.ceil(meters * 1.2);
+                resPipes.textContent = `${pipes} lengths x 3m (110mm Pushfit Soil Pipe - Black/Grey)`;
+                resCouplers.textContent = `${couplers} Double Socket Couplers / ${clips} Pipe Clips`;
+                resLube.textContent = '1x 500ml Silicone Lubricant Spray';
+            } else if (system === 'solvent110') {
+                const pipes = Math.ceil(meters / 3);
+                const couplers = Math.ceil(meters / 2.5);
+                const clips = Math.ceil(meters * 1.2);
+                resPipes.textContent = `${pipes} lengths x 3m (110mm Solvent Weld Soil Pipe)`;
+                resCouplers.textContent = `${couplers} Solvent Couplers / ${clips} Pipe Clips`;
+                resLube.textContent = '1x 500ml PVC Solvent Cement + Cleaner';
+            } else if (system === 'waste32') {
+                const pipes = Math.ceil(meters / 3);
+                const couplers = Math.ceil(meters / 1.5);
+                const clips = Math.ceil(meters * 1.5);
+                resPipes.textContent = `${pipes} lengths x 3m (32mm Solvent Weld Waste Pipe)`;
+                resCouplers.textContent = `${couplers} Straight Couplings / ${clips} Pipe Clips`;
+                resLube.textContent = '1x 250ml Solvent Cement Tin';
+            } else if (system === 'underground110') {
+                const pipes = Math.ceil(meters / 3);
+                const chambers = Math.ceil(meters / 15);
+                resPipes.textContent = `${pipes} lengths x 3m (110mm Terracotta Underground Pipe EN1401)`;
+                resCouplers.textContent = `${pipes} Socket Couplers / ${chambers} Inspection Chamber(s)`;
+                resLube.textContent = '2x 500ml Silicone Lubricant Tubs';
+            } else if (system === 'mdpe25') {
+                const coils = meters <= 25 ? '1x 25m Coil' : meters <= 50 ? '1x 50m Coil' : `${Math.ceil(meters / 100)}x 100m Coils`;
+                const fittings = Math.ceil(meters / 10);
+                resPipes.textContent = `${coils} (25mm Blue MDPE Water Pipe)`;
+                resCouplers.textContent = `${fittings} WRAS Compression Couplings`;
+                resLube.textContent = '1x MDPE Pipe Cutter & PTFE Tape Pack';
+            }
+        }
+
+        calcSystem.addEventListener('change', updateEstimate);
+        calcMeters.addEventListener('input', updateEstimate);
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>
